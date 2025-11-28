@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Sighencea</title>
+  <meta name="robots" content="noindex">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%2339FF14' width='100' height='100'/%3E%3Ctext x='50' y='70' font-size='60' font-weight='900' text-anchor='middle' fill='%230a0e27'%3ES%3C/text%3E%3C/svg%3E">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <!-- Noise Background -->
+  <div class="noise-bg"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="logo-text">SIGHENCEA</span>
+      </a>
+
+      <nav class="nav-desktop">
+        <a href="index.html" class="nav-item">HOME</a>
+        <a href="about.html" class="nav-item">ABOUT</a>
+        <a href="work.html" class="nav-item">WORK</a>
+        <a href="portfolio.html" class="nav-item">PORTFOLIO</a>
+        <a href="journal.html" class="nav-item">JOURNAL</a>
+        <a href="contact.html" class="nav-item">CONTACT</a>
+      </nav>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <svg class="icon-menu" width="24" height="24"><use href="assets/icons/icons.svg#icon-menu"></use></svg>
+        <svg class="icon-close hidden" width="24" height="24"><use href="assets/icons/icons.svg#icon-x"></use></svg>
+      </button>
+
+      <nav class="mobile-menu" id="mobile-menu">
+        <a href="index.html" class="mobile-nav-item">HOME</a>
+        <a href="about.html" class="mobile-nav-item">ABOUT</a>
+        <a href="work.html" class="mobile-nav-item">WORK</a>
+        <a href="portfolio.html" class="mobile-nav-item">PORTFOLIO</a>
+        <a href="journal.html" class="mobile-nav-item">JOURNAL</a>
+        <a href="contact.html" class="mobile-nav-item">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow relative z-10 min-h-screen flex items-center justify-center px-6">
+    <div class="text-center">
+      <!-- Error Code -->
+      <div class="inline-block border-8 border-lime bg-black p-8 shadow-lime-xl mb-8" style="transform: rotate(-2deg);">
+        <h1 class="font-black text-7xl md:text-9xl text-lime uppercase tracking-tighter">
+          <span class="glitch-text">
+            <span class="relative z-10">404</span>
+            <span class="glitch-layer glitch-layer-lime" aria-hidden="true">404</span>
+            <span class="glitch-layer glitch-layer-magenta" aria-hidden="true">404</span>
+          </span>
+        </h1>
+      </div>
+
+      <!-- Error Message -->
+      <div class="card p-8 max-w-xl mx-auto mb-8">
+        <div class="card-content">
+          <div class="scanline"></div>
+          <h2 class="font-black text-2xl md:text-3xl uppercase text-cream mb-4">
+            [ERROR: PAGE_NOT_FOUND]
+          </h2>
+          <p class="text-cream/70 font-mono text-lg mb-6">
+            THE STITCH YOU'RE LOOKING FOR DOESN'T EXIST.
+            PERHAPS IT WAS NEVER PUNCHED, OR HAS BEEN REMOVED.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="index.html" class="btn btn-primary">
+              RETURN HOME
+            </a>
+            <a href="contact.html" class="btn btn-outline">
+              REPORT ISSUE
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Debug Info -->
+      <p class="text-xs text-cream/40 font-mono uppercase">
+        [REQUESTED_PATH: <span id="requested-path"></span>]
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-credits">
+          [DESIGNED_WITH_PRECISION] /// [BUILT_WITH_HTML_+_CSS_+_JS]
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script>
+    // Display requested path
+    document.getElementById('requested-path').textContent = window.location.pathname;
+  </script>
+</body>
+</html>

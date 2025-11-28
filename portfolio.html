@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>Portfolio | Radu Sighencea</title>
+  <meta name="title" content="Portfolio | Radu Sighencea">
+  <meta name="description" content="A visual record of precision. Browse leather craft, software engineering, and restoration projects.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sighencea.com/portfolio">
+  <meta property="og:title" content="Portfolio | Radu Sighencea">
+  <meta property="og:description" content="A visual record of precision. Browse leather craft, software engineering, and restoration projects.">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://sighencea.com/portfolio">
+  <meta property="twitter:title" content="Portfolio | Radu Sighencea">
+  <meta property="twitter:description" content="A visual record of precision.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://sighencea.com/portfolio">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%2339FF14' width='100' height='100'/%3E%3Ctext x='50' y='70' font-size='60' font-weight='900' text-anchor='middle' fill='%230a0e27'%3ES%3C/text%3E%3C/svg%3E">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <!-- Noise Background -->
+  <div class="noise-bg"></div>
+
+  <!-- Page Transition Overlay -->
+  <div id="page-transition" class="page-transition"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" data-nav-link>
+        <div class="logo-icon">S</div>
+        <span class="logo-text">SIGHENCEA</span>
+      </a>
+
+      <nav class="nav-desktop">
+        <a href="index.html" class="nav-item" data-nav-link>HOME</a>
+        <a href="about.html" class="nav-item" data-nav-link>ABOUT</a>
+        <a href="work.html" class="nav-item" data-nav-link>WORK</a>
+        <a href="portfolio.html" class="nav-item active" data-nav-link>PORTFOLIO</a>
+        <a href="journal.html" class="nav-item" data-nav-link>JOURNAL</a>
+        <a href="contact.html" class="nav-item" data-nav-link>CONTACT</a>
+      </nav>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <svg class="icon-menu" width="24" height="24"><use href="assets/icons/icons.svg#icon-menu"></use></svg>
+        <svg class="icon-close hidden" width="24" height="24"><use href="assets/icons/icons.svg#icon-x"></use></svg>
+      </button>
+
+      <nav class="mobile-menu" id="mobile-menu">
+        <a href="index.html" class="mobile-nav-item" data-nav-link>HOME</a>
+        <a href="about.html" class="mobile-nav-item" data-nav-link>ABOUT</a>
+        <a href="work.html" class="mobile-nav-item" data-nav-link>WORK</a>
+        <a href="portfolio.html" class="mobile-nav-item active" data-nav-link>PORTFOLIO</a>
+        <a href="journal.html" class="mobile-nav-item" data-nav-link>JOURNAL</a>
+        <a href="contact.html" class="mobile-nav-item" data-nav-link>CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-grow relative z-10 min-h-screen pb-24">
+    <div class="container mx-auto px-6 py-12">
+      <!-- Page Header -->
+      <div class="mb-16" data-animate>
+        <h1 class="font-black text-4xl md:text-6xl mb-6 uppercase text-lime inline-block bg-black px-6 py-4 border-8 border-lime shadow-lime-lg" style="transform: rotate(-2deg);">
+          PORTFOLIO
+        </h1>
+        <p class="text-cream font-mono text-lg mt-4"><span class="text-lime font-black">&gt;&gt;</span> A VISUAL RECORD OF PRECISION</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex flex-wrap gap-4 mb-16 border-b-4 border-lime pb-4" data-portfolio-filter>
+        <button class="filter-btn active" data-filter="all">[ALL]</button>
+        <button class="filter-btn" data-filter="leather">[LEATHER]</button>
+        <button class="filter-btn" data-filter="software">[SOFTWARE]</button>
+        <button class="filter-btn" data-filter="restoration">[RESTORATION]</button>
+      </div>
+
+      <!-- Project Grid -->
+      <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1: Flagship Tote -->
+        <div class="project-card card card-tilt-left" data-project data-category="leather" data-animate>
+          <div class="card-content">
+            <div class="scanline"></div>
+            <div class="aspect-[4/3] bg-navy relative overflow-hidden border-b-4 border-black">
+              <div class="absolute inset-0 bg-black/0 hover:bg-lime/20 transition-colors z-10"></div>
+              <div class="absolute inset-0 flex items-center justify-center text-lime/60">
+                <svg width="48" height="48" class="transition-transform hover:scale-125"><use href="assets/icons/icons.svg#icon-hammer"></use></svg>
+              </div>
+              <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, #39FF14 2px, #39FF14 4px);"></div>
+            </div>
+            <div class="p-5 flex flex-col">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="font-black text-xl uppercase text-cream leading-tight hover:text-lime transition-colors">Flagship Tote</h3>
+                <svg width="16" height="16" class="text-lime opacity-0 hover:opacity-100 transition-opacity"><use href="assets/icons/icons.svg#icon-external-link"></use></svg>
+              </div>
+              <p class="text-cream/70 text-sm mb-4 font-mono">17 hours of hand-stitching. Italian vegetable-tanned leather. A bag designed to outlast its owner.</p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">Bespoke</span>
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">Hand-stitched</span>
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">Italian Leather</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Handline Platform -->
+        <div class="project-card card" data-project data-category="software" data-animate>
+          <div class="card-content">
+            <div class="scanline"></div>
+            <div class="aspect-[4/3] bg-navy relative overflow-hidden border-b-4 border-black">
+              <div class="absolute inset-0 bg-black/0 hover:bg-lime/20 transition-colors z-10"></div>
+              <div class="absolute inset-0 flex items-center justify-center text-lime/60">
+                <svg width="48" height="48" class="transition-transform hover:scale-125"><use href="assets/icons/icons.svg#icon-code"></use></svg>
+              </div>
+              <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, #39FF14 2px, #39FF14 4px);"></div>
+            </div>
+            <div class="p-5 flex flex-col">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="font-black text-xl uppercase text-cream leading-tight hover:text-lime transition-colors">Handline Platform</h3>
+                <svg width="16" height="16" class="text-lime opacity-0 hover:opacity-100 transition-opacity"><use href="assets/icons/icons.svg#icon-external-link"></use></svg>
+              </div>
+              <p class="text-cream/70 text-sm mb-4 font-mono">Production tracking for artisans. Replaces chaotic spreadsheets with streamlined workflow automation.</p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">SaaS</span>
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">React</span>
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">Node.js</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Louis Vuitton Restoration -->
+        <div class="project-card card card-tilt-right" data-project data-category="restoration" data-animate>
+          <div class="card-content">
+            <div class="scanline"></div>
+            <div class="aspect-[4/3] bg-navy relative overflow-hidden border-b-4 border-black">
+              <div class="absolute inset-0 bg-black/0 hover:bg-lime/20 transition-colors z-10"></div>
+              <div class="absolute inset-0 flex items-center justify-center text-lime/60">
+                <svg width="48" height="48" class="transition-transform hover:scale-125"><use href="assets/icons/icons.svg#icon-layers"></use></svg>
+              </div>
+              <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, #39FF14 2px, #39FF14 4px);"></div>
+            </div>
+            <div class="p-5 flex flex-col">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="font-black text-xl uppercase text-cream leading-tight hover:text-lime transition-colors">Louis Vuitton Restoration</h3>
+                <svg width="16" height="16" class="text-lime opacity-0 hover:opacity-100 transition-opacity"><use href="assets/icons/icons.svg#icon-external-link"></use></svg>
+              </div>
+              <p class="text-cream/70 text-sm mb-4 font-mono">Complete zipper replacement and leather conditioning for a 14-year-old heirloom wallet.</p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">Restoration</span>
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">Luxury</span>
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">Repair</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Abrax -->
+        <div class="project-card card card-tilt-left" data-project data-category="software" data-animate>
+          <div class="card-content">
+            <div class="scanline"></div>
+            <div class="aspect-[4/3] bg-navy relative overflow-hidden border-b-4 border-black">
+              <div class="absolute inset-0 bg-black/0 hover:bg-lime/20 transition-colors z-10"></div>
+              <div class="absolute inset-0 flex items-center justify-center text-lime/60">
+                <svg width="48" height="48" class="transition-transform hover:scale-125"><use href="assets/icons/icons.svg#icon-code"></use></svg>
+              </div>
+              <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, #39FF14 2px, #39FF14 4px);"></div>
+            </div>
+            <div class="p-5 flex flex-col">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="font-black text-xl uppercase text-cream leading-tight hover:text-lime transition-colors">Abrax</h3>
+                <svg width="16" height="16" class="text-lime opacity-0 hover:opacity-100 transition-opacity"><use href="assets/icons/icons.svg#icon-external-link"></use></svg>
+              </div>
+              <p class="text-cream/70 text-sm mb-4 font-mono">Task automation and property maintenance system for real-time workflow management.</p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">Automation</span>
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">Mobile App</span>
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">Enterprise</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Heirloom Belt Series -->
+        <div class="project-card card" data-project data-category="leather" data-animate>
+          <div class="card-content">
+            <div class="scanline"></div>
+            <div class="aspect-[4/3] bg-navy relative overflow-hidden border-b-4 border-black">
+              <div class="absolute inset-0 bg-black/0 hover:bg-lime/20 transition-colors z-10"></div>
+              <div class="absolute inset-0 flex items-center justify-center text-lime/60">
+                <svg width="48" height="48" class="transition-transform hover:scale-125"><use href="assets/icons/icons.svg#icon-hammer"></use></svg>
+              </div>
+              <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, #39FF14 2px, #39FF14 4px);"></div>
+            </div>
+            <div class="p-5 flex flex-col">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="font-black text-xl uppercase text-cream leading-tight hover:text-lime transition-colors">Heirloom Belt Series</h3>
+                <svg width="16" height="16" class="text-lime opacity-0 hover:opacity-100 transition-opacity"><use href="assets/icons/icons.svg#icon-external-link"></use></svg>
+              </div>
+              <p class="text-cream/70 text-sm mb-4 font-mono">Solid brass hardware, 12oz bridle leather. The "Choose One, Choose Once" philosophy embodied.</p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">Accessories</span>
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">Heavyweight</span>
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">Lifetime</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Escape the Pacific -->
+        <div class="project-card card card-tilt-right" data-project data-category="software" data-animate>
+          <div class="card-content">
+            <div class="scanline"></div>
+            <div class="aspect-[4/3] bg-navy relative overflow-hidden border-b-4 border-black">
+              <div class="absolute inset-0 bg-black/0 hover:bg-lime/20 transition-colors z-10"></div>
+              <div class="absolute inset-0 flex items-center justify-center text-lime/60">
+                <svg width="48" height="48" class="transition-transform hover:scale-125"><use href="assets/icons/icons.svg#icon-code"></use></svg>
+              </div>
+              <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, #39FF14 2px, #39FF14 4px);"></div>
+            </div>
+            <div class="p-5 flex flex-col">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="font-black text-xl uppercase text-cream leading-tight hover:text-lime transition-colors">Escape the Pacific</h3>
+                <svg width="16" height="16" class="text-lime opacity-0 hover:opacity-100 transition-opacity"><use href="assets/icons/icons.svg#icon-external-link"></use></svg>
+              </div>
+              <p class="text-cream/70 text-sm mb-4 font-mono">Creative mode design and game economics balancing for a survival simulation game.</p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">Game Dev</span>
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">System Design</span>
+                <span class="text-xs bg-black text-lime border-2 border-lime px-2 py-1 font-black uppercase">Lua</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="hidden text-center py-20">
+        <div class="inline-block border-4 border-lime bg-navy p-8">
+          <p class="text-lime font-mono font-black text-xl">[ERROR: NO_PROJECTS_FOUND]</p>
+        </div>
+      </div>
+
+      <!-- Bottom Note -->
+      <div class="mt-32 pt-12 border-t-8 border-black text-center" data-animate>
+        <p class="text-sm text-cream/70 font-mono mb-8 max-w-2xl mx-auto border-4 border-lime/30 p-6 bg-navy-light">
+          <span class="text-lime font-black">[NOTE]</span> SOME WORKS NOT DISPLAYED DUE TO PRIVACY OR CLIENT DISCRETION.
+          ARCHIVED WORK AVAILABLE ON REQUEST.
+        </p>
+        <div class="flex justify-center gap-6">
+          <a href="contact.html" class="btn btn-outline" data-nav-link>VIEW ALL COMMISSIONS</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-block">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">S</div>
+            <span class="footer-logo-text">SIGHENCEA</span>
+          </div>
+          <p class="footer-bio">
+            <span class="text-lime font-black">&gt;&gt;</span> I BUILD THINGS THAT LAST. IN LEATHER, IN SOFTWARE, IN LEGACY.
+            BASED IN MIDLETON, IRELAND.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">
+              <svg width="20" height="20"><use href="assets/icons/icons.svg#icon-instagram"></use></svg>
+            </a>
+            <a href="#" aria-label="GitHub">
+              <svg width="20" height="20"><use href="assets/icons/icons.svg#icon-github"></use></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg width="20" height="20"><use href="assets/icons/icons.svg#icon-linkedin"></use></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <h4 class="footer-heading">[NAVIGATION]</h4>
+          <ul class="footer-links">
+            <li><a href="work.html" data-nav-link>&gt; WORK</a></li>
+            <li><a href="portfolio.html" data-nav-link>&gt; PORTFOLIO</a></li>
+            <li><a href="journal.html" data-nav-link>&gt; JOURNAL</a></li>
+            <li><a href="contact.html" data-nav-link>&gt; CONTACT</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-block">
+          <h4 class="footer-heading">[LEGAL]</h4>
+          <ul class="footer-links">
+            <li><a href="#">&gt; TERMS</a></li>
+            <li><a href="#">&gt; PRIVACY</a></li>
+            <li><a href="#">&gt; COOKIES</a></li>
+            <li class="text-xs opacity-50 pt-2">&copy; 2025 SIGHENCEA</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-credits">
+          [DESIGNED_WITH_PRECISION] /// [BUILT_WITH_HTML_+_CSS_+_JS]
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
