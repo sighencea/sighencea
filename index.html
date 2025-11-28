@@ -76,8 +76,9 @@
 
   <!-- Main Content -->
   <main id="main-content" class="flex-grow relative z-10">
+    <div class="space-y-32 pb-24">
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex flex-col justify-center px-6 pt-20 overflow-hidden">
+    <section class="relative min-h-[90vh] flex flex-col justify-center px-6 pt-20 overflow-hidden">
       <!-- Noisy background pattern -->
       <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E'); background-size: 200px 200px;"></div>
 
@@ -115,7 +116,7 @@
     </section>
 
     <!-- Dual Identity Section -->
-    <section class="container mx-auto px-6 py-24">
+    <section class="container mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
         <!-- Leather Card -->
         <div class="card card-tilt-left p-6" data-animate>
@@ -164,17 +165,18 @@
     </section>
 
     <!-- Featured Projects Section -->
-    <section class="container mx-auto px-6 py-24 border-y-8 border-black bg-navy-light">
-      <div class="section-heading text-center">
-        <h2 class="section-heading-title">
-          <span>SELECTED WORKS</span>
-        </h2>
-        <p class="section-heading-subtitle">&gt;&gt;&gt; A CURATION OF RECENT COMMISSIONS AND TECHNICAL BUILDS</p>
-      </div>
+    <section class="border-y-8 border-black bg-navy-light">
+      <div class="container mx-auto px-6 py-24">
+        <div class="section-heading text-center">
+          <h2 class="section-heading-title">
+            <span>SELECTED WORKS</span>
+          </h2>
+          <p class="section-heading-subtitle">&gt;&gt;&gt; A CURATION OF RECENT COMMISSIONS AND TECHNICAL BUILDS</p>
+        </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-3 gap-8">
         <!-- Project 1: Flagship Tote -->
-        <div class="card card-tilt-left" data-animate>
+        <div class="card card-tilt-left card-scale" data-animate>
           <div class="card-content">
             <div class="scanline"></div>
             <div class="aspect-[4/3] bg-navy w-full relative border-b-4 border-black overflow-hidden">
@@ -200,7 +202,7 @@
         </div>
 
         <!-- Project 2: Handline Platform -->
-        <div class="card" data-animate>
+        <div class="card card-scale" data-animate>
           <div class="card-content">
             <div class="scanline"></div>
             <div class="aspect-[4/3] bg-navy w-full relative border-b-4 border-black overflow-hidden">
@@ -226,7 +228,7 @@
         </div>
 
         <!-- Project 3: Louis Vuitton Restoration -->
-        <div class="card card-tilt-right" data-animate>
+        <div class="card card-tilt-right card-scale" data-animate>
           <div class="card-content">
             <div class="scanline"></div>
             <div class="aspect-[4/3] bg-navy w-full relative border-b-4 border-black overflow-hidden">
@@ -250,12 +252,13 @@
             </div>
           </div>
         </div>
+        </div>
       </div>
     </section>
 
     <!-- Philosophy Teaser Section -->
-    <section class="container mx-auto px-6 py-24 text-center max-w-4xl">
-      <div class="border-8 border-black bg-lime p-12 shadow-brutal-2xl" style="transform: rotate(-1deg);" data-animate>
+    <section class="container mx-auto px-6 text-center max-w-4xl">
+      <div class="border-8 border-black bg-lime p-12 shadow-brutal-2xl hover-straighten" style="transform: rotate(-1deg);" data-animate>
         <h2 class="font-black text-3xl md:text-5xl leading-tight mb-8 uppercase text-navy">
           "THE WORLD HAS FORGOTTEN HOW TO BUILD THINGS THAT LAST."
         </h2>
@@ -266,6 +269,7 @@
         <a href="journal.html" class="btn bg-navy text-lime border-navy" style="box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);" data-nav-link>READ JOURNAL</a>
       </div>
     </section>
+    </div>
   </main>
 
   <!-- Footer -->

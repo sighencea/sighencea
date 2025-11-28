@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:designs.magicpath.ai)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -71,10 +71,10 @@
   </header>
 
   <!-- Main Content -->
-  <main id="main-content" class="flex-grow relative z-10 min-h-screen pb-24">
-    <div class="container mx-auto px-6 py-12">
+  <main id="main-content" class="flex-grow relative z-10 min-h-screen">
+    <div class="container mx-auto px-6 py-12 pb-24">
       <!-- Page Header -->
-      <div class="mb-16" data-animate>
+      <div class="mb-12" data-animate>
         <h1 class="font-black text-4xl md:text-6xl mb-6 uppercase text-lime inline-block bg-black px-6 py-4 border-8 border-lime shadow-lime-lg" style="transform: rotate(-2deg);">
           PORTFOLIO
         </h1>
@@ -82,7 +82,7 @@
       </div>
 
       <!-- Filters -->
-      <div class="flex flex-wrap gap-4 mb-16 border-b-4 border-lime pb-4" data-portfolio-filter>
+      <div class="flex flex-wrap gap-4 mb-12 border-b-4 border-lime pb-4" data-portfolio-filter>
         <button class="filter-btn active" data-filter="all">[ALL]</button>
         <button class="filter-btn" data-filter="leather">[LEATHER]</button>
         <button class="filter-btn" data-filter="software">[SOFTWARE]</button>
@@ -92,7 +92,7 @@
       <!-- Project Grid -->
       <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Project 1: Flagship Tote -->
-        <div class="project-card card card-tilt-left" data-project data-category="leather" data-animate>
+        <div class="project-card card card-tilt-left card-scale" data-project data-category="leather" data-animate>
           <div class="card-content">
             <div class="scanline"></div>
             <div class="aspect-[4/3] bg-navy relative overflow-hidden border-b-4 border-black">
@@ -118,7 +118,7 @@
         </div>
 
         <!-- Project 2: Handline Platform -->
-        <div class="project-card card" data-project data-category="software" data-animate>
+        <div class="project-card card card-scale" data-project data-category="software" data-animate>
           <div class="card-content">
             <div class="scanline"></div>
             <div class="aspect-[4/3] bg-navy relative overflow-hidden border-b-4 border-black">
@@ -144,7 +144,7 @@
         </div>
 
         <!-- Project 3: Louis Vuitton Restoration -->
-        <div class="project-card card card-tilt-right" data-project data-category="restoration" data-animate>
+        <div class="project-card card card-tilt-right card-scale" data-project data-category="restoration" data-animate>
           <div class="card-content">
             <div class="scanline"></div>
             <div class="aspect-[4/3] bg-navy relative overflow-hidden border-b-4 border-black">
@@ -170,7 +170,7 @@
         </div>
 
         <!-- Project 4: Abrax -->
-        <div class="project-card card card-tilt-left" data-project data-category="software" data-animate>
+        <div class="project-card card card-tilt-left card-scale" data-project data-category="software" data-animate>
           <div class="card-content">
             <div class="scanline"></div>
             <div class="aspect-[4/3] bg-navy relative overflow-hidden border-b-4 border-black">
@@ -196,7 +196,7 @@
         </div>
 
         <!-- Project 5: Heirloom Belt Series -->
-        <div class="project-card card" data-project data-category="leather" data-animate>
+        <div class="project-card card card-scale" data-project data-category="leather" data-animate>
           <div class="card-content">
             <div class="scanline"></div>
             <div class="aspect-[4/3] bg-navy relative overflow-hidden border-b-4 border-black">
@@ -222,7 +222,7 @@
         </div>
 
         <!-- Project 6: Escape the Pacific -->
-        <div class="project-card card card-tilt-right" data-project data-category="software" data-animate>
+        <div class="project-card card card-tilt-right card-scale" data-project data-category="software" data-animate>
           <div class="card-content">
             <div class="scanline"></div>
             <div class="aspect-[4/3] bg-navy relative overflow-hidden border-b-4 border-black">
@@ -256,7 +256,7 @@
       </div>
 
       <!-- Bottom Note -->
-      <div class="mt-32 pt-12 border-t-8 border-black text-center" data-animate>
+      <div class="mt-24 pt-12 border-t-8 border-black text-center" data-animate>
         <p class="text-sm text-cream/70 font-mono mb-8 max-w-2xl mx-auto border-4 border-lime/30 p-6 bg-navy-light">
           <span class="text-lime font-black">[NOTE]</span> SOME WORKS NOT DISPLAYED DUE TO PRIVACY OR CLIENT DISCRETION.
           ARCHIVED WORK AVAILABLE ON REQUEST.

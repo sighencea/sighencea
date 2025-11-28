@@ -82,11 +82,37 @@ input, textarea, select {
 
 .container {
   width: 100%;
-  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+/* Responsive container max-widths (matching Tailwind v4) */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
 }
 
 .sr-only {
@@ -117,17 +143,28 @@ input, textarea, select {
 .gap-12 { gap: 3rem; }
 .flex-grow { flex-grow: 1; }
 
+/* Space-Y utilities (vertical spacing between children) */
+.space-y-2 > :not(:last-child) { margin-bottom: 0.5rem; }
+.space-y-3 > :not(:last-child) { margin-bottom: 0.75rem; }
+.space-y-4 > :not(:last-child) { margin-bottom: 1rem; }
+.space-y-6 > :not(:last-child) { margin-bottom: 1.5rem; }
+.space-y-8 > :not(:last-child) { margin-bottom: 2rem; }
+.space-y-12 > :not(:last-child) { margin-bottom: 3rem; }
+.space-y-32 > :not(:last-child) { margin-bottom: 8rem; }
+
 /* Grid Utilities */
 .grid { display: grid; }
 .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
 .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
-/* Spacing Utilities */
-.p-2 { padding: 0.5rem; }
-.p-4 { padding: 1rem; }
-.p-6 { padding: 1.5rem; }
-.p-8 { padding: 2rem; }
-.p-12 { padding: 3rem; }
+/* Spacing Utilities - Based on Tailwind v4 (--spacing: 0.25rem = 4px) */
+.p-2 { padding: 0.5rem; }      /* 8px */
+.p-3 { padding: 0.75rem; }     /* 12px */
+.p-4 { padding: 1rem; }        /* 16px */
+.p-5 { padding: 1.25rem; }     /* 20px */
+.p-6 { padding: 1.5rem; }      /* 24px */
+.p-8 { padding: 2rem; }        /* 32px */
+.p-12 { padding: 3rem; }       /* 48px */
 .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
 .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
 .px-4 { padding-left: 1rem; padding-right: 1rem; }
@@ -139,7 +176,9 @@ input, textarea, select {
 .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
 .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
 .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+.py-20 { padding-top: 5rem; padding-bottom: 5rem; }
 .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+.pt-2 { padding-top: 0.5rem; }
 .pt-4 { padding-top: 1rem; }
 .pt-8 { padding-top: 2rem; }
 .pt-12 { padding-top: 3rem; }
@@ -155,15 +194,18 @@ input, textarea, select {
 .mb-4 { margin-bottom: 1rem; }
 .mb-6 { margin-bottom: 1.5rem; }
 .mb-8 { margin-bottom: 2rem; }
+.mb-10 { margin-bottom: 2.5rem; }
 .mb-12 { margin-bottom: 3rem; }
 .mb-16 { margin-bottom: 4rem; }
 .mb-20 { margin-bottom: 5rem; }
+.mb-24 { margin-bottom: 6rem; }
 .mt-4 { margin-top: 1rem; }
 .mt-8 { margin-top: 2rem; }
 .mt-24 { margin-top: 6rem; }
 .mt-32 { margin-top: 8rem; }
 .ml-1 { margin-left: 0.25rem; }
 .ml-2 { margin-left: 0.5rem; }
+.mr-2 { margin-right: 0.5rem; }
 .mx-auto { margin-left: auto; margin-right: auto; }
 
 /* Sizing */
@@ -181,6 +223,8 @@ input, textarea, select {
 .h-24 { height: 6rem; }
 .h-full { height: 100%; }
 .min-h-screen { min-height: 100vh; }
+.min-h-\[90vh\] { min-height: 90vh; }
+.min-h-\[calc\(100vh-96px\)\] { min-height: calc(100vh - 96px); }
 .max-w-xs { max-width: 20rem; }
 .max-w-xl { max-width: 36rem; }
 .max-w-2xl { max-width: 42rem; }
@@ -250,6 +294,7 @@ input, textarea, select {
 .underline { text-decoration: underline; }
 .underline-offset-4 { text-underline-offset: 4px; }
 .decoration-4 { text-decoration-thickness: 4px; }
+.text-\[10px\] { font-size: 10px; }
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -489,6 +534,34 @@ input, textarea, select {
   transform: rotate(0) translateY(-4px);
 }
 
+/* Card with scale on hover (for project cards) */
+.card-tilt-left.card-scale:hover,
+.card-tilt-right.card-scale:hover {
+  transform: rotate(0) translateY(-4px) scale(1.05);
+}
+
+.card.card-scale:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* Hover straighten utility (for non-card elements) */
+.hover-straighten {
+  transition: transform 300ms ease;
+}
+
+.hover-straighten:hover {
+  transform: rotate(0) !important;
+}
+
+/* Hover rotate opposite (rotates the other way on hover) */
+.hover-rotate-opposite {
+  transition: transform 300ms ease;
+}
+
+.hover-rotate-opposite:hover {
+  transform: rotate(-1deg) !important;
+}
+
 /* Scanline Effect */
 .scanline {
   position: absolute;
@@ -558,13 +631,40 @@ input, textarea, select {
 }
 
 .header-inner {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 1.5rem;
   height: 6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+/* Header follows same responsive pattern as container */
+@media (min-width: 640px) {
+  .header-inner {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .header-inner {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .header-inner {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+  .header-inner {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+  .header-inner {
+    max-width: 1536px;
+  }
 }
 
 .logo {
@@ -1128,6 +1228,35 @@ input, textarea, select {
 
 .contact-tab:not(.active):hover {
   border-color: var(--neon-lime);
+}
+
+/* ==========================================================================
+   Value Cards (About page)
+   ========================================================================== */
+
+.value-card {
+  transition: all 200ms ease;
+}
+
+.value-card:hover {
+  background-color: var(--neon-lime);
+}
+
+.value-card:hover h4,
+.value-card:hover p {
+  color: var(--navy-dark);
+}
+
+/* ==========================================================================
+   Journal Featured Entry
+   ========================================================================== */
+
+.journal-featured {
+  transition: box-shadow 200ms ease;
+}
+
+.journal-featured:hover {
+  box-shadow: 20px 20px 0px 0px rgba(57, 255, 20, 1);
 }
 
 /* ==========================================================================
