@@ -444,11 +444,20 @@
       ContactTabs.init();
       FormHandler.init();
       SmoothScroll.init();
+      this.updateCopyrightYear();
 
       // Scroll to top on page load
       window.scrollTo(0, 0);
 
       console.log('[SIGHENCEA] System initialized');
+    },
+
+    updateCopyrightYear() {
+      const yearElements = document.querySelectorAll('.current-year');
+      const currentYear = new Date().getFullYear();
+      yearElements.forEach(el => {
+        el.textContent = currentYear;
+      });
     }
   };
 
