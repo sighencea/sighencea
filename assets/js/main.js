@@ -424,6 +424,41 @@
   };
 
   // ==========================================================================
+  // Back to Top Button
+  // ==========================================================================
+
+  const BackToTop = {
+    button: null,
+
+    init() {
+      this.button = document.getElementById('back-to-top');
+      if (!this.button) return;
+
+      this.setupScrollListener();
+      this.setupClickHandler();
+    },
+
+    setupScrollListener() {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          this.button.classList.add('is-visible');
+        } else {
+          this.button.classList.remove('is-visible');
+        }
+      });
+    },
+
+    setupClickHandler() {
+      this.button.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+  };
+
+  // ==========================================================================
   // Initialize All Modules
   // ==========================================================================
 
@@ -444,6 +479,7 @@
       ContactTabs.init();
       FormHandler.init();
       SmoothScroll.init();
+      BackToTop.init();
       this.updateCopyrightYear();
 
       // Scroll to top on page load

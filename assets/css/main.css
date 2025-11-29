@@ -1360,7 +1360,49 @@ input, textarea, select {
   .header,
   .footer,
   .page-transition,
-  .noise-bg {
+  .noise-bg,
+  .back-to-top {
     display: none;
   }
+}
+
+/* ==========================================================================
+   Back to Top Button
+   ========================================================================== */
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--neon-lime);
+  color: var(--navy-dark);
+  border: 4px solid var(--black);
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 300ms ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
 }
