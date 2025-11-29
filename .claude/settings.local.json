@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:designs.magicpath.ai)"
+      "WebFetch(domain:designs.magicpath.ai)",
+      "WebFetch(domain:www.escapethepacific.com)",
+      "WebFetch(domain:www.getabrax.com)",
+      "WebFetch(domain:www.sinest.app)"
     ],
     "deny": [],
     "ask": []
