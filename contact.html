@@ -141,6 +141,7 @@
                     <option value="" disabled selected>SELECT_SUBJECT</option>
                     <option value="leather_enquiry">LEATHER_ENQUIRY</option>
                     <option value="software_enquiry">SOFTWARE_ENQUIRY</option>
+                    <option value="journal_notifications">JOURNAL_NOTIFICATIONS</option>
                     <option value="other">OTHER</option>
                   </select>
                 </div>
@@ -284,7 +285,9 @@
       const subjectSelect = document.getElementById('subject');
       const customSubjectWrapper = document.getElementById('custom-subject-wrapper');
       const customSubjectInput = document.getElementById('custom_subject');
+      const messageTextarea = document.getElementById('message');
 
+      // Handle custom subject visibility on change
       if (subjectSelect && customSubjectWrapper) {
         subjectSelect.addEventListener('change', function() {
           if (this.value === 'other') {
@@ -296,6 +299,15 @@
             customSubjectInput.value = '';
           }
         });
+      }
+
+      // Handle URL parameters for pre-filling form
+      const urlParams = new URLSearchParams(window.location.search);
+      const subjectParam = urlParams.get('subject');
+
+      if (subjectParam === 'journal_notifications' && subjectSelect && messageTextarea) {
+        subjectSelect.value = 'journal_notifications';
+        messageTextarea.value = 'Please add me to your journal notification list. I would like to receive updates when you publish new entries.';
       }
     });
   </script>
