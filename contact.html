@@ -81,69 +81,20 @@
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <!-- Contact Type Tabs (Sidebar) -->
-        <div class="lg:col-span-1 flex flex-col gap-6">
-          <!-- Leather Tab -->
-          <div class="card contact-tab active cursor-pointer p-6" data-tab="leather" data-animate>
-            <div class="card-content">
-              <div class="scanline"></div>
-              <div class="flex items-center gap-3 mb-4">
-                <svg class="w-6 h-6 text-lime" width="24" height="24"><use href="assets/icons/icons.svg#icon-hammer"></use></svg>
-                <h3 class="font-black uppercase text-lg text-cream">[LEATHER]</h3>
-              </div>
-              <p class="text-sm text-cream/70 font-mono">
-                Custom bespoke pieces, heirlooms, and premium restorations.
-              </p>
-            </div>
-          </div>
-
-          <!-- Software Tab -->
-          <div class="card contact-tab cursor-pointer p-6" data-tab="software" data-animate>
-            <div class="card-content">
-              <div class="scanline"></div>
-              <div class="flex items-center gap-3 mb-4">
-                <svg class="w-6 h-6 text-cream/60" width="24" height="24"><use href="assets/icons/icons.svg#icon-code"></use></svg>
-                <h3 class="font-black uppercase text-lg text-cream">[SOFTWARE]</h3>
-              </div>
-              <p class="text-sm text-cream/70 font-mono">
-                Product consulting, system architecture, and specialized builds.
-              </p>
-            </div>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="card p-6 bg-navy border-lime/30" data-animate>
-            <div class="card-content">
-              <div class="scanline"></div>
-              <h4 class="font-black text-lg mb-4 uppercase text-lime">[OTHER_INFO]</h4>
-              <ul class="flex flex-col gap-4 text-sm text-cream/70 font-mono">
-                <li class="flex items-center gap-2">
-                  <svg class="text-lime" width="14" height="14"><use href="assets/icons/icons.svg#icon-map-pin"></use></svg>
-                  MIDLETON, CORK, IRELAND
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg class="text-lime" width="14" height="14"><use href="assets/icons/icons.svg#icon-mail"></use></svg>
-                  CONTACT@SIGHENCEA.COM
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
+      <div class="max-w-3xl mx-auto">
         <!-- Contact Form -->
-        <div class="lg:col-span-2" data-animate>
+        <div data-animate>
           <div class="card p-8 border-8 border-black shadow-lime-lg">
             <div class="card-content">
               <div class="scanline"></div>
               <h3 id="form-title" class="font-black text-3xl mb-8 uppercase text-lime">
-                [START_COMMISSION]
+                [GET_IN_TOUCH]
               </h3>
 
               <!-- Form -->
               <form
                 id="contact-form"
-                action="https://formspree.io/f/YOUR_FORM_ID"
+                action="https://formspree.io/f/xkglqlwo"
                 method="POST"
                 data-contact-form
                 class="flex flex-col gap-6"
@@ -184,14 +135,26 @@
                   <select
                     id="subject"
                     name="subject"
+                    required
                     class="form-input form-select font-black"
                   >
-                    <!-- Leather options (shown by default) -->
-                    <option value="bespoke_commission">BESPOKE_COMMISSION</option>
-                    <option value="restoration_inquiry">RESTORATION_INQUIRY</option>
-                    <option value="product_question">PRODUCT_QUESTION</option>
+                    <option value="" disabled selected>SELECT_SUBJECT</option>
+                    <option value="leather_enquiry">LEATHER_ENQUIRY</option>
+                    <option value="software_enquiry">SOFTWARE_ENQUIRY</option>
                     <option value="other">OTHER</option>
                   </select>
+                </div>
+
+                <!-- Custom Subject (shown when OTHER is selected) -->
+                <div id="custom-subject-wrapper" class="flex flex-col gap-2 hidden">
+                  <label for="custom_subject" class="form-label">[CUSTOM_SUBJECT]</label>
+                  <input
+                    type="text"
+                    id="custom_subject"
+                    name="custom_subject"
+                    class="form-input"
+                    placeholder="ENTER_YOUR_SUBJECT..."
+                  >
                 </div>
 
                 <!-- Message -->
@@ -203,7 +166,7 @@
                     rows="6"
                     required
                     class="form-input resize-none"
-                    placeholder="DESCRIBE_THE_PIECE_YOU_ENVISION..."
+                    placeholder="DESCRIBE_YOUR_PROJECT_OR_QUESTION..."
                   ></textarea>
                 </div>
 
@@ -231,6 +194,24 @@
                 <p class="text-cream/80 font-mono">PLEASE TRY AGAIN OR EMAIL DIRECTLY.</p>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="card p-6 mt-8 bg-navy border-lime/30" data-animate>
+          <div class="card-content">
+            <div class="scanline"></div>
+            <h4 class="font-black text-lg mb-4 uppercase text-lime">[OTHER_INFO]</h4>
+            <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8 text-sm text-cream/70 font-mono">
+              <li class="flex items-center gap-2">
+                <svg class="text-lime" width="14" height="14"><use href="assets/icons/icons.svg#icon-map-pin"></use></svg>
+                MIDLETON, CORK, IRELAND
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="text-lime" width="14" height="14"><use href="assets/icons/icons.svg#icon-mail"></use></svg>
+                CONTACT@SIGHENCEA.COM
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -298,5 +279,25 @@
   </button>
 
   <script src="assets/js/main.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const subjectSelect = document.getElementById('subject');
+      const customSubjectWrapper = document.getElementById('custom-subject-wrapper');
+      const customSubjectInput = document.getElementById('custom_subject');
+
+      if (subjectSelect && customSubjectWrapper) {
+        subjectSelect.addEventListener('change', function() {
+          if (this.value === 'other') {
+            customSubjectWrapper.classList.remove('hidden');
+            customSubjectInput.setAttribute('required', '');
+          } else {
+            customSubjectWrapper.classList.add('hidden');
+            customSubjectInput.removeAttribute('required');
+            customSubjectInput.value = '';
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
