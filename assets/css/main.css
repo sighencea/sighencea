@@ -11,7 +11,7 @@
   /* Colors */
   --navy-dark: #0a0e27;
   --navy-light: #1a1f3a;
-  --neon-lime: #39FF14;
+  --accent-blue: #2F5EFF;
   --cream: #f5f1e3;
   --magenta: #ff00ff;
   --black: #000000;
@@ -50,7 +50,7 @@ body {
 }
 
 ::selection {
-  background-color: var(--neon-lime);
+  background-color: var(--accent-blue);
   color: var(--navy-dark);
 }
 
@@ -304,21 +304,21 @@ input, textarea, select {
 
 /* Colors */
 .text-navy { color: var(--navy-dark); }
-.text-lime { color: var(--neon-lime); }
+.text-lime { color: var(--accent-blue); }
 .text-cream { color: var(--cream); }
 .text-cream\/60 { color: rgba(245, 241, 227, 0.6); }
 .text-cream\/70 { color: rgba(245, 241, 227, 0.7); }
 .text-cream\/80 { color: rgba(245, 241, 227, 0.8); }
 .text-cream\/90 { color: rgba(245, 241, 227, 0.9); }
-.text-lime\/40 { color: rgba(57, 255, 20, 0.4); }
-.text-lime\/60 { color: rgba(57, 255, 20, 0.6); }
+.text-lime\/40 { color: rgba(47, 94, 255, 0.4); }
+.text-lime\/60 { color: rgba(47, 94, 255, 0.6); }
 .bg-navy { background-color: var(--navy-dark); }
 .bg-navy-light { background-color: var(--navy-light); }
-.bg-lime { background-color: var(--neon-lime); }
+.bg-lime { background-color: var(--accent-blue); }
 .bg-black { background-color: var(--black); }
 .bg-transparent { background-color: transparent; }
-.bg-lime\/10 { background-color: rgba(57, 255, 20, 0.1); }
-.bg-lime\/20 { background-color: rgba(57, 255, 20, 0.2); }
+.bg-lime\/10 { background-color: rgba(47, 94, 255, 0.1); }
+.bg-lime\/20 { background-color: rgba(47, 94, 255, 0.2); }
 .bg-navy\/50 { background-color: rgba(10, 14, 39, 0.5); }
 
 /* Borders */
@@ -335,9 +335,9 @@ input, textarea, select {
 .border-r-4 { border-right-width: 4px; border-right-style: solid; }
 .border-y-8 { border-top-width: 8px; border-bottom-width: 8px; border-style: solid; }
 .border-black { border-color: var(--black); }
-.border-lime { border-color: var(--neon-lime); }
-.border-lime\/30 { border-color: rgba(57, 255, 20, 0.3); }
-.border-lime\/50 { border-color: rgba(57, 255, 20, 0.5); }
+.border-lime { border-color: var(--accent-blue); }
+.border-lime\/30 { border-color: rgba(47, 94, 255, 0.3); }
+.border-lime\/50 { border-color: rgba(47, 94, 255, 0.5); }
 .border-transparent { border-color: transparent; }
 
 /* Shadows */
@@ -346,10 +346,10 @@ input, textarea, select {
 .shadow-brutal-lg { box-shadow: 8px 8px 0px 0px rgba(0,0,0,1); }
 .shadow-brutal-xl { box-shadow: 12px 12px 0px 0px rgba(0,0,0,1); }
 .shadow-brutal-2xl { box-shadow: 16px 16px 0px 0px rgba(0,0,0,1); }
-.shadow-lime { box-shadow: 8px 8px 0px 0px rgba(57, 255, 20, 1); }
-.shadow-lime-lg { box-shadow: 12px 12px 0px 0px rgba(57, 255, 20, 1); }
-.shadow-lime-xl { box-shadow: 16px 16px 0px 0px rgba(57, 255, 20, 1); }
-.shadow-lime-2xl { box-shadow: 20px 20px 0px 0px rgba(57, 255, 20, 1); }
+.shadow-lime { box-shadow: 8px 8px 0px 0px rgba(47, 94, 255, 1); }
+.shadow-lime-lg { box-shadow: 12px 12px 0px 0px rgba(47, 94, 255, 1); }
+.shadow-lime-xl { box-shadow: 16px 16px 0px 0px rgba(47, 94, 255, 1); }
+.shadow-lime-2xl { box-shadow: 20px 20px 0px 0px rgba(47, 94, 255, 1); }
 .shadow-header { box-shadow: 0 8px 0px 0px rgba(0,0,0,1); }
 .shadow-none { box-shadow: none; }
 
@@ -445,23 +445,23 @@ input, textarea, select {
 
 /* Button Variants */
 .btn-primary {
-  background-color: var(--neon-lime);
+  background-color: var(--accent-blue);
   color: var(--navy-dark);
   border-color: var(--black);
 }
 
 .btn-primary:hover {
-  background-color: #2ecc11;
+  background-color: #2651d9;
 }
 
 .btn-outline {
   background-color: transparent;
   color: var(--cream);
-  border-color: var(--neon-lime);
+  border-color: var(--accent-blue);
 }
 
 .btn-outline:hover {
-  background-color: var(--neon-lime);
+  background-color: var(--accent-blue);
   color: var(--navy-dark);
 }
 
@@ -472,7 +472,7 @@ input, textarea, select {
 }
 
 .btn-ghost:hover {
-  background-color: rgba(57, 255, 20, 0.2);
+  background-color: rgba(47, 94, 255, 0.2);
   box-shadow: none;
   transform: none;
 }
@@ -481,7 +481,7 @@ input, textarea, select {
   background-color: transparent;
   border-color: transparent;
   box-shadow: none;
-  color: var(--neon-lime);
+  color: var(--accent-blue);
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 4px;
@@ -511,7 +511,7 @@ input, textarea, select {
 }
 
 .card:hover {
-  box-shadow: 12px 12px 0px 0px rgba(57, 255, 20, 1);
+  box-shadow: 12px 12px 0px 0px rgba(47, 94, 255, 1);
   transform: translateY(-4px);
 }
 
@@ -573,8 +573,8 @@ input, textarea, select {
     0deg,
     transparent,
     transparent 2px,
-    rgba(57, 255, 20, 0.3) 2px,
-    rgba(57, 255, 20, 0.3) 4px
+    rgba(47, 94, 255, 0.3) 2px,
+    rgba(47, 94, 255, 0.3) 4px
   );
 }
 
@@ -599,7 +599,7 @@ input, textarea, select {
   position: relative;
   z-index: 10;
   padding: 0.5rem 1rem;
-  background-color: var(--neon-lime);
+  background-color: var(--accent-blue);
   color: var(--navy-dark);
   display: inline-block;
   box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
@@ -678,7 +678,7 @@ input, textarea, select {
 .logo-icon {
   width: 3rem;
   height: 3rem;
-  background-color: var(--neon-lime);
+  background-color: var(--accent-blue);
   color: var(--navy-dark);
   display: flex;
   align-items: center;
@@ -698,7 +698,7 @@ input, textarea, select {
 }
 
 .logo:hover .logo-text {
-  color: var(--neon-lime);
+  color: var(--accent-blue);
 }
 
 .logo:hover .logo-icon {
@@ -718,21 +718,21 @@ input, textarea, select {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 0.75rem 1.5rem;
-  border: 4px solid rgba(57, 255, 20, 0.3);
+  border: 4px solid rgba(47, 94, 255, 0.3);
   background-color: transparent;
   color: var(--cream);
   transition: all 200ms ease;
 }
 
 .nav-item:hover {
-  border-color: var(--neon-lime);
-  background-color: rgba(57, 255, 20, 0.1);
+  border-color: var(--accent-blue);
+  background-color: rgba(47, 94, 255, 0.1);
   box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
   transform: rotate(-2deg);
 }
 
 .nav-item.active {
-  background-color: var(--neon-lime);
+  background-color: var(--accent-blue);
   color: var(--navy-dark);
   border-color: var(--black);
   box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
@@ -745,13 +745,13 @@ input, textarea, select {
   z-index: 50;
   padding: 0.75rem;
   color: var(--cream);
-  border: 4px solid var(--neon-lime);
+  border: 4px solid var(--accent-blue);
   background-color: var(--navy-dark);
   transition: all 200ms ease;
 }
 
 .menu-toggle:hover {
-  background-color: var(--neon-lime);
+  background-color: var(--accent-blue);
   color: var(--navy-dark);
 }
 
@@ -765,7 +765,7 @@ input, textarea, select {
   position: fixed;
   inset: 0;
   background-color: var(--navy-dark);
-  border: 8px solid var(--neon-lime);
+  border: 8px solid var(--accent-blue);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -787,19 +787,19 @@ input, textarea, select {
   font-weight: 900;
   text-transform: uppercase;
   padding: 1rem 2rem;
-  border: 4px solid rgba(57, 255, 20, 0.5);
+  border: 4px solid rgba(47, 94, 255, 0.5);
   color: var(--cream);
   transition: all 200ms ease;
 }
 
 .mobile-nav-item:hover {
-  border-color: var(--neon-lime);
-  background-color: rgba(57, 255, 20, 0.1);
+  border-color: var(--accent-blue);
+  background-color: rgba(47, 94, 255, 0.1);
   transform: scale(1.1);
 }
 
 .mobile-nav-item.active {
-  background-color: var(--neon-lime);
+  background-color: var(--accent-blue);
   color: var(--navy-dark);
   border-color: var(--black);
   transform: rotate(-2deg);
@@ -825,7 +825,7 @@ input, textarea, select {
 }
 
 .footer-block {
-  border: 4px solid rgba(57, 255, 20, 0.3);
+  border: 4px solid rgba(47, 94, 255, 0.3);
   padding: 1.5rem;
   background-color: var(--navy-dark);
 }
@@ -841,7 +841,7 @@ input, textarea, select {
 .footer-logo-icon {
   width: 2.5rem;
   height: 2.5rem;
-  background-color: var(--neon-lime);
+  background-color: var(--accent-blue);
   color: var(--navy-dark);
   display: flex;
   align-items: center;
@@ -874,14 +874,14 @@ input, textarea, select {
 
 .footer-social a {
   padding: 0.5rem;
-  border: 2px solid rgba(57, 255, 20, 0.3);
+  border: 2px solid rgba(47, 94, 255, 0.3);
   transition: all 200ms ease;
 }
 
 .footer-social a:hover {
-  color: var(--neon-lime);
-  border-color: var(--neon-lime);
-  background-color: rgba(57, 255, 20, 0.1);
+  color: var(--accent-blue);
+  border-color: var(--accent-blue);
+  background-color: rgba(47, 94, 255, 0.1);
 }
 
 .footer-social svg {
@@ -891,7 +891,7 @@ input, textarea, select {
 
 .footer-heading {
   font-weight: 900;
-  color: var(--neon-lime);
+  color: var(--accent-blue);
   margin-bottom: 1rem;
   text-transform: uppercase;
   font-size: 0.875rem;
@@ -916,13 +916,13 @@ input, textarea, select {
 
 .footer-links a:hover,
 .footer-links button:hover {
-  color: var(--neon-lime);
+  color: var(--accent-blue);
   transform: translateX(4px);
 }
 
 .footer-bottom {
   padding-top: 2rem;
-  border-top: 4px solid rgba(57, 255, 20, 0.3);
+  border-top: 4px solid rgba(47, 94, 255, 0.3);
   text-align: center;
 }
 
@@ -942,7 +942,7 @@ input, textarea, select {
 .page-transition {
   position: fixed;
   inset: 0;
-  background-color: var(--neon-lime);
+  background-color: var(--accent-blue);
   z-index: 100;
   pointer-events: none;
   transform: translateY(100%);
@@ -1023,7 +1023,7 @@ input, textarea, select {
 }
 
 .glitch-text .glitch-layer-lime {
-  color: var(--neon-lime);
+  color: var(--accent-blue);
   animation: glitch-1 0.3s infinite;
 }
 
@@ -1143,7 +1143,7 @@ input, textarea, select {
 .form-input {
   width: 100%;
   background-color: var(--navy-dark);
-  border: 4px solid rgba(57, 255, 20, 0.5);
+  border: 4px solid rgba(47, 94, 255, 0.5);
   padding: 0.75rem 1rem;
   color: var(--cream);
   font-family: var(--font-mono);
@@ -1152,7 +1152,7 @@ input, textarea, select {
 
 .form-input:focus {
   outline: none;
-  border-color: var(--neon-lime);
+  border-color: var(--accent-blue);
 }
 
 .form-input::placeholder {
@@ -1188,7 +1188,7 @@ input, textarea, select {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 0.75rem 1.5rem;
-  border: 4px solid rgba(57, 255, 20, 0.5);
+  border: 4px solid rgba(47, 94, 255, 0.5);
   background-color: transparent;
   color: var(--cream);
   box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
@@ -1196,12 +1196,12 @@ input, textarea, select {
 }
 
 .filter-btn:hover {
-  border-color: var(--neon-lime);
-  background-color: rgba(57, 255, 20, 0.1);
+  border-color: var(--accent-blue);
+  background-color: rgba(47, 94, 255, 0.1);
 }
 
 .filter-btn.active {
-  background-color: var(--neon-lime);
+  background-color: var(--accent-blue);
   color: var(--navy-dark);
   border-color: var(--black);
   transform: rotate(-1deg);
@@ -1218,16 +1218,16 @@ input, textarea, select {
 
 .contact-tab.active {
   border-width: 8px;
-  border-color: var(--neon-lime);
-  box-shadow: 12px 12px 0px 0px rgba(57, 255, 20, 1);
+  border-color: var(--accent-blue);
+  box-shadow: 12px 12px 0px 0px rgba(47, 94, 255, 1);
 }
 
 .contact-tab:not(.active) {
-  border-color: rgba(57, 255, 20, 0.3);
+  border-color: rgba(47, 94, 255, 0.3);
 }
 
 .contact-tab:not(.active):hover {
-  border-color: var(--neon-lime);
+  border-color: var(--accent-blue);
 }
 
 /* ==========================================================================
@@ -1239,7 +1239,7 @@ input, textarea, select {
 }
 
 .value-card:hover {
-  background-color: var(--neon-lime);
+  background-color: var(--accent-blue);
 }
 
 .value-card:hover h4,
@@ -1256,7 +1256,7 @@ input, textarea, select {
 }
 
 .journal-featured:hover {
-  box-shadow: 20px 20px 0px 0px rgba(57, 255, 20, 1);
+  box-shadow: 20px 20px 0px 0px rgba(47, 94, 255, 1);
 }
 
 /* ==========================================================================
@@ -1280,21 +1280,21 @@ input, textarea, select {
     0deg,
     transparent,
     transparent 20px,
-    rgba(57, 255, 20, 0.1) 20px,
-    rgba(57, 255, 20, 0.1) 22px
+    rgba(47, 94, 255, 0.1) 20px,
+    rgba(47, 94, 255, 0.1) 22px
   ),
   repeating-linear-gradient(
     90deg,
     transparent,
     transparent 20px,
-    rgba(57, 255, 20, 0.1) 20px,
-    rgba(57, 255, 20, 0.1) 22px
+    rgba(47, 94, 255, 0.1) 20px,
+    rgba(47, 94, 255, 0.1) 22px
   );
   opacity: 0.2;
 }
 
 .placeholder-text {
-  color: rgba(57, 255, 20, 0.4);
+  color: rgba(47, 94, 255, 0.4);
   font-family: var(--font-mono);
   font-weight: 900;
   font-size: 0.75rem;
@@ -1380,7 +1380,7 @@ input, textarea, select {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--neon-lime);
+  background-color: var(--accent-blue);
   color: var(--navy-dark);
   border: 4px solid var(--black);
   box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);

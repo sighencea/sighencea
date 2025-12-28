@@ -1,6 +1,6 @@
 /**
  * Sighencea - Main JavaScript
- * Handles navigation, animations, portfolio filtering, contact tabs, and form submission
+ * Handles navigation, animations, and form submission
  */
 
 (function() {
@@ -146,167 +146,6 @@
       );
 
       animatedElements.forEach(el => this.observer.observe(el));
-    }
-  };
-
-  // ==========================================================================
-  // Portfolio Filter Module
-  // ==========================================================================
-
-  const PortfolioFilter = {
-    filterContainer: null,
-    filterButtons: null,
-    projects: null,
-    emptyState: null,
-    currentFilter: 'all',
-
-    init() {
-      this.filterContainer = document.querySelector('[data-portfolio-filter]');
-      if (!this.filterContainer) return;
-
-      this.filterButtons = this.filterContainer.querySelectorAll('[data-filter]');
-      this.projects = document.querySelectorAll('[data-project]');
-      this.emptyState = document.getElementById('empty-state');
-
-      this.setupFilters();
-    },
-
-    setupFilters() {
-      this.filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const filter = button.getAttribute('data-filter');
-          this.applyFilter(filter);
-          this.updateActiveButton(button);
-        });
-      });
-    },
-
-    applyFilter(filter) {
-      this.currentFilter = filter;
-      let visibleCount = 0;
-
-      this.projects.forEach((project, index) => {
-        const category = project.getAttribute('data-category');
-        const matches = filter === 'all' || category === filter;
-
-        if (matches) {
-          visibleCount++;
-          project.classList.remove('is-hidden');
-          project.style.display = '';
-
-          // Add staggered animation
-          setTimeout(() => {
-            project.classList.add('is-entering');
-            setTimeout(() => {
-              project.classList.remove('is-entering');
-            }, 300);
-          }, index * 50);
-        } else {
-          project.classList.add('is-hidden');
-          setTimeout(() => {
-            if (project.classList.contains('is-hidden')) {
-              project.style.display = 'none';
-            }
-          }, 300);
-        }
-      });
-
-      // Show/hide empty state
-      if (this.emptyState) {
-        this.emptyState.classList.toggle('hidden', visibleCount > 0);
-      }
-    },
-
-    updateActiveButton(activeButton) {
-      this.filterButtons.forEach(button => {
-        button.classList.remove('active');
-      });
-      activeButton.classList.add('active');
-    }
-  };
-
-  // ==========================================================================
-  // Contact Tabs Module
-  // ==========================================================================
-
-  const ContactTabs = {
-    tabs: null,
-    formTitle: null,
-    subjectSelect: null,
-    messageTextarea: null,
-    activeTab: 'leather',
-
-    leatherSubjects: [
-      { value: 'bespoke_commission', label: 'BESPOKE_COMMISSION' },
-      { value: 'restoration_inquiry', label: 'RESTORATION_INQUIRY' },
-      { value: 'product_question', label: 'PRODUCT_QUESTION' },
-      { value: 'other', label: 'OTHER' }
-    ],
-
-    softwareSubjects: [
-      { value: 'project_consultation', label: 'PROJECT_CONSULTATION' },
-      { value: 'technical_advisory', label: 'TECHNICAL_ADVISORY' },
-      { value: 'partnership', label: 'PARTNERSHIP' },
-      { value: 'other', label: 'OTHER' }
-    ],
-
-    init() {
-      this.tabs = document.querySelectorAll('[data-tab]');
-      this.formTitle = document.getElementById('form-title');
-      this.subjectSelect = document.getElementById('subject');
-      this.messageTextarea = document.getElementById('message');
-
-      if (this.tabs.length === 0) return;
-
-      this.setupTabs();
-    },
-
-    setupTabs() {
-      this.tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          const tabId = tab.getAttribute('data-tab');
-          this.switchTab(tabId);
-          this.updateActiveTab(tab);
-        });
-      });
-    },
-
-    switchTab(tabId) {
-      this.activeTab = tabId;
-
-      // Update form title
-      if (this.formTitle) {
-        this.formTitle.textContent = tabId === 'leather'
-          ? '[START_COMMISSION]'
-          : '[DISCUSS_PROJECT]';
-      }
-
-      // Update subject options
-      if (this.subjectSelect) {
-        const subjects = tabId === 'leather' ? this.leatherSubjects : this.softwareSubjects;
-        this.subjectSelect.innerHTML = subjects
-          .map(s => `<option value="${s.value}">${s.label}</option>`)
-          .join('');
-      }
-
-      // Update placeholder text
-      if (this.messageTextarea) {
-        this.messageTextarea.placeholder = tabId === 'leather'
-          ? 'DESCRIBE_THE_PIECE_YOU_ENVISION...'
-          : 'DESCRIBE_THE_PROBLEM_YOU_ARE_SOLVING...';
-      }
-    },
-
-    updateActiveTab(activeTab) {
-      this.tabs.forEach(tab => {
-        tab.classList.remove('active');
-        const icon = tab.querySelector('svg');
-        if (icon) {
-          icon.classList.toggle('text-lime', tab === activeTab);
-          icon.classList.toggle('text-cream/60', tab !== activeTab);
-        }
-      });
-      activeTab.classList.add('active');
     }
   };
 
@@ -475,8 +314,6 @@
     setup() {
       Navigation.init();
       ScrollAnimations.init();
-      PortfolioFilter.init();
-      ContactTabs.init();
       FormHandler.init();
       SmoothScroll.init();
       BackToTop.init();

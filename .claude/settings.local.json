@@ -4,7 +4,9 @@
       "WebFetch(domain:designs.magicpath.ai)",
       "WebFetch(domain:www.escapethepacific.com)",
       "WebFetch(domain:www.getabrax.com)",
-      "WebFetch(domain:www.sinest.app)"
+      "WebFetch(domain:www.sinest.app)",
+      "Bash(find:*)",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": []

@@ -7,25 +7,25 @@
   <!-- Primary Meta Tags -->
   <title>Journal | Radu Sighencea</title>
   <meta name="title" content="Journal | Radu Sighencea">
-  <meta name="description" content="Documenting the craft, the code, the lessons. Articles on leather craft, software engineering, and philosophy.">
+  <meta name="description" content="Notes on systems, software, and building things that endure. Observations from building systems that survive real usage.">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sighencea.com/journal">
   <meta property="og:title" content="Journal | Radu Sighencea">
-  <meta property="og:description" content="Documenting the craft, the code, the lessons.">
+  <meta property="og:description" content="Notes on systems, software, and building things that endure.">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://sighencea.com/journal">
   <meta property="twitter:title" content="Journal | Radu Sighencea">
-  <meta property="twitter:description" content="Documenting the craft, the code, the lessons.">
+  <meta property="twitter:description" content="Notes on systems, software, and building things that endure.">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://sighencea.com/journal">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%2339FF14' width='100' height='100'/%3E%3Ctext x='50' y='70' font-size='60' font-weight='900' text-anchor='middle' fill='%230a0e27'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%232F5EFF' width='100' height='100'/%3E%3Ctext x='50' y='70' font-size='60' font-weight='900' text-anchor='middle' fill='%230a0e27'%3ES%3C/text%3E%3C/svg%3E">
 
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/main.css">
@@ -47,7 +47,6 @@
 
       <nav class="nav-desktop">
         <a href="index.html" class="nav-item" data-nav-link>HOME</a>
-        <a href="about.html" class="nav-item" data-nav-link>ABOUT</a>
         <a href="work.html" class="nav-item" data-nav-link>WORK</a>
         <a href="journal.html" class="nav-item active" data-nav-link>JOURNAL</a>
         <a href="contact.html" class="nav-item" data-nav-link>CONTACT</a>
@@ -60,7 +59,6 @@
 
       <nav class="mobile-menu" id="mobile-menu">
         <a href="index.html" class="mobile-nav-item" data-nav-link>HOME</a>
-        <a href="about.html" class="mobile-nav-item" data-nav-link>ABOUT</a>
         <a href="work.html" class="mobile-nav-item" data-nav-link>WORK</a>
         <a href="journal.html" class="mobile-nav-item active" data-nav-link>JOURNAL</a>
         <a href="contact.html" class="mobile-nav-item" data-nav-link>CONTACT</a>
@@ -71,92 +69,86 @@
   <!-- Main Content -->
   <main id="main-content" class="flex-grow relative z-10 min-h-screen">
     <div class="max-w-4xl mx-auto px-6 py-12">
-      <div class="space-y-32 pb-24">
-      <!-- Page Header -->
-      <div class="text-center" data-animate>
-        <h1 class="font-black text-4xl md:text-6xl mb-8 uppercase text-lime inline-block bg-black px-6 py-4 border-8 border-lime shadow-lime-lg" style="transform: rotate(-2deg);">
-          THE JOURNAL
-        </h1>
-        <p class="text-xl text-cream font-mono mt-4">
-          <span class="text-lime font-black">&gt;&gt;</span> Documenting the craft, the code, the lessons
-        </p>
-      </div>
+      <div class="space-y-16 pb-24">
+        <!-- Page Header -->
+        <div class="text-center" data-animate>
+          <h1 class="font-black text-4xl md:text-6xl mb-8 uppercase text-lime inline-block bg-black px-6 py-4 border-8 border-lime shadow-lime-lg" style="transform: rotate(-2deg);">
+            JOURNAL
+          </h1>
+          <p class="text-xl text-cream font-mono mt-4">
+            <span class="text-lime font-black">&gt;&gt;</span> Notes on systems, software, and building things that endure
+          </p>
+        </div>
 
-      <!-- Featured Article -->
-      <div data-animate>
-        <div class="card journal-featured p-8 md:p-12 border-8 border-lime shadow-lime-xl">
+        <!-- Intro Block -->
+        <div class="card p-8 md:p-12 border-4 border-lime/30" data-animate>
           <div class="card-content">
             <div class="scanline"></div>
-            <span class="text-lime text-xs font-black tracking-widest uppercase mb-4 block bg-black inline-block px-3 py-1 border-2 border-lime">[FEATURED_ENTRY]</span>
-            <h2 class="font-black text-3xl md:text-5xl mb-6 uppercase text-cream leading-tight">
-              WHY I STITCH BY HAND
-            </h2>
-            <p class="text-cream/80 text-lg mb-8 leading-relaxed font-mono">
-              A machine can sew faster, but it cannot think. Hand stitching is not nostalgia or romantic artisan cosplay — it is an engineering choice. It is about how the system fails, and who pays the price when it does. Every hole is intentional. Every knot is a decision.
-            </p>
-            <a href="journal/why-i-stitch-by-hand.html" class="btn btn-primary" data-nav-link>READ FULL ENTRY</a>
+            <div class="text-cream/90 leading-relaxed font-mono space-y-4">
+              <p class="text-lg">
+                <span class="text-lime font-black">&gt;&gt;</span> These are notes from real work.
+              </p>
+              <p class="text-cream/70">
+                They are not tutorials and not opinions for attention. They are observations from building systems that have to survive real usage, real users, and real consequences.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Article List -->
-      <div class="flex flex-col gap-12">
-        <!-- Article 1 -->
-        <article class="card card-tilt-left card-scale cursor-pointer p-6" data-animate onclick="window.location.href='journal/code-and-leather.html'">
-          <div class="card-content">
-            <div class="scanline"></div>
-            <div class="text-xs mb-4 pt-2">
-              <span class="uppercase tracking-wider text-lime bg-black px-3 py-1 border-2 border-lime font-black">[Philosophy]</span>
+        <!-- Article List -->
+        <div class="flex flex-col gap-8">
+          <!-- Article 1 -->
+          <article class="card card-tilt-left p-6 border-l-8 border-lime" data-animate>
+            <div class="card-content">
+              <div class="scanline"></div>
+              <h3 class="font-black text-2xl md:text-3xl mb-4 uppercase text-cream leading-tight">
+                Why I Design Systems to Fail Gracefully
+              </h3>
+              <p class="text-cream/70 leading-relaxed mb-6 font-mono">
+                Most software fails not because of bugs, but because it collapses when assumptions break.
+              </p>
+              <span class="text-lime font-black text-sm font-mono">[COMING_SOON]</span>
             </div>
-            <h3 class="font-black text-2xl md:text-3xl mb-4 uppercase text-cream hover:text-lime transition-colors leading-tight">
-              Code and Leather. Two Mediums, One Philosophy
-            </h3>
-            <p class="text-cream/70 leading-relaxed mb-6 font-mono">
-              People see contradiction. A leather artisan with calloused hands. A software architect designing systems. They assume these worlds are separate. They are not.
-            </p>
-            <a href="journal/code-and-leather.html" class="flex items-center text-sm font-black text-lime uppercase hover:translate-x-2 transition-transform" data-nav-link>
-              READ MORE
-              <svg class="ml-1" width="14" height="14"><use href="assets/icons/icons.svg#icon-chevron-right"></use></svg>
-            </a>
-          </div>
-        </article>
+          </article>
 
-        <!-- Article 2 -->
-        <article class="card card-tilt-right card-scale cursor-pointer p-6" data-animate onclick="window.location.href='journal/hypocrisy-of-local-support.html'">
-          <div class="card-content">
-            <div class="scanline"></div>
-            <div class="text-xs mb-4 pt-2">
-              <span class="uppercase tracking-wider text-lime bg-black px-3 py-1 border-2 border-lime font-black">[Philosophy]</span>
+          <!-- Article 2 -->
+          <article class="card card-tilt-right p-6 border-l-8 border-lime" data-animate>
+            <div class="card-content">
+              <div class="scanline"></div>
+              <h3 class="font-black text-2xl md:text-3xl mb-4 uppercase text-cream leading-tight">
+                Why Cheap Software Always Becomes Expensive
+              </h3>
+              <p class="text-cream/70 leading-relaxed mb-6 font-mono">
+                Short-term savings are just delayed costs with interest.
+              </p>
+              <span class="text-lime font-black text-sm font-mono">[COMING_SOON]</span>
             </div>
-            <h3 class="font-black text-2xl md:text-3xl mb-4 uppercase text-cream hover:text-lime transition-colors leading-tight">
-              The Hypocrisy of Local Support
-            </h3>
-            <p class="text-cream/70 leading-relaxed mb-6 font-mono">
-              Everyone says they want "local." Everyone posts "support your artisans." Until they see the price. Then local becomes "overpriced."
-            </p>
-            <a href="journal/hypocrisy-of-local-support.html" class="flex items-center text-sm font-black text-lime uppercase hover:translate-x-2 transition-transform" data-nav-link>
-              READ MORE
-              <svg class="ml-1" width="14" height="14"><use href="assets/icons/icons.svg#icon-chevron-right"></use></svg>
-            </a>
-          </div>
-        </article>
-      </div>
+          </article>
 
-      <!-- Subscribe CTA -->
-      <div class="p-12 bg-lime border-8 border-black shadow-brutal-2xl text-center hover-straighten" style="transform: rotate(-1deg);" data-animate>
-        <h4 class="font-black text-2xl mb-6 uppercase text-navy">[STAY_INFORMED]</h4>
-        <p class="text-sm text-navy max-w-xl mx-auto mb-4 font-mono font-bold">
-          Writing forces clarity. I document my failures in the workshop and my bugs in the code
-          so that the next iteration is stronger.
-        </p>
-        <p class="text-xs text-navy max-w-md mx-auto mb-8 font-mono font-bold">
-          [Want to know when I publish a new entry? Click below to request journal notifications.]
-        </p>
-        <a href="contact.html?subject=journal_notifications" class="btn bg-navy text-lime border-4 border-black" style="box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);" data-nav-link>
-          <svg class="mr-2" width="16" height="16"><use href="assets/icons/icons.svg#icon-mail"></use></svg>
-          REQUEST_NOTIFICATIONS
-        </a>
-      </div>
+          <!-- Article 3 -->
+          <article class="card card-tilt-left p-6 border-l-8 border-lime" data-animate>
+            <div class="card-content">
+              <div class="scanline"></div>
+              <h3 class="font-black text-2xl md:text-3xl mb-4 uppercase text-cream leading-tight">
+                Longevity Is a Design Choice, Not a Feature
+              </h3>
+              <p class="text-cream/70 leading-relaxed mb-6 font-mono">
+                Systems last when durability is designed in from the start.
+              </p>
+              <span class="text-lime font-black text-sm font-mono">[COMING_SOON]</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- CTA Block -->
+        <div class="p-12 bg-lime border-8 border-black shadow-brutal-2xl text-center hover-straighten" style="transform: rotate(-1deg);" data-animate>
+          <p class="font-black text-xl mb-8 uppercase text-navy font-mono">
+            If these ideas resonate, we should talk.
+          </p>
+          <a href="contact.html" class="btn bg-navy text-lime border-4 border-black" style="box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);" data-nav-link>
+            WORK WITH ME
+          </a>
+        </div>
       </div>
     </div>
   </main>
@@ -171,13 +163,10 @@
             <span class="footer-logo-text">SIGHENCEA</span>
           </div>
           <p class="footer-bio">
-            <span class="text-lime font-black">&gt;&gt;</span> I build things that last. In leather, in software, in legacy.
-            Based in Midleton, Ireland. <span class="text-lime font-black">If you want disposable, you're in the wrong place.</span>
+            <span class="text-lime font-black">&gt;&gt;</span> I design and build software systems that endure.
+            Based in Midleton, Ireland.
           </p>
           <div class="footer-social">
-            <a href="#" aria-label="Instagram">
-              <svg width="20" height="20"><use href="assets/icons/icons.svg#icon-instagram"></use></svg>
-            </a>
             <a href="#" aria-label="GitHub">
               <svg width="20" height="20"><use href="assets/icons/icons.svg#icon-github"></use></svg>
             </a>
