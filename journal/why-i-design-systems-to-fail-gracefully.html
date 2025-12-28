@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>Why I Design Systems to Fail Gracefully | Radu Sighencea</title>
+  <meta name="title" content="Why I Design Systems to Fail Gracefully | Radu Sighencea">
+  <meta name="description" content="Most software fails not because of bugs, but because it collapses when assumptions break. Failure-aware design means building systems that degrade gracefully.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://sighencea.com/journal/why-i-design-systems-to-fail-gracefully">
+  <meta property="og:title" content="Why I Design Systems to Fail Gracefully | Radu Sighencea">
+  <meta property="og:description" content="Most software fails not because of bugs, but because it collapses when assumptions break.">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://sighencea.com/journal/why-i-design-systems-to-fail-gracefully">
+  <meta property="twitter:title" content="Why I Design Systems to Fail Gracefully | Radu Sighencea">
+  <meta property="twitter:description" content="Most software fails not because of bugs, but because it collapses when assumptions break.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://sighencea.com/journal/why-i-design-systems-to-fail-gracefully">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%232F5EFF' width='100' height='100'/%3E%3Ctext x='50' y='70' font-size='60' font-weight='900' text-anchor='middle' fill='%230a0e27'%3ES%3C/text%3E%3C/svg%3E">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+  <!-- Noise Background -->
+  <div class="noise-bg"></div>
+
+  <!-- Page Transition Overlay -->
+  <div id="page-transition" class="page-transition"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo" data-nav-link>
+        <div class="logo-icon">S</div>
+        <span class="logo-text">SIGHENCEA</span>
+      </a>
+
+      <nav class="nav-desktop">
+        <a href="../index.html" class="nav-item" data-nav-link>HOME</a>
+        <a href="../work.html" class="nav-item" data-nav-link>WORK</a>
+        <a href="../journal.html" class="nav-item active" data-nav-link>JOURNAL</a>
+        <a href="../contact.html" class="nav-item" data-nav-link>CONTACT</a>
+      </nav>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <svg class="icon-menu" width="24" height="24"><use href="../assets/icons/icons.svg#icon-menu"></use></svg>
+        <svg class="icon-close hidden" width="24" height="24"><use href="../assets/icons/icons.svg#icon-x"></use></svg>
+      </button>
+
+      <nav class="mobile-menu" id="mobile-menu">
+        <a href="../index.html" class="mobile-nav-item" data-nav-link>HOME</a>
+        <a href="../work.html" class="mobile-nav-item" data-nav-link>WORK</a>
+        <a href="../journal.html" class="mobile-nav-item active" data-nav-link>JOURNAL</a>
+        <a href="../contact.html" class="mobile-nav-item" data-nav-link>CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-grow relative z-10">
+    <article class="max-w-3xl mx-auto px-6 py-12 pb-24">
+      <!-- Article Header -->
+      <header class="mb-12" data-animate>
+        <a href="../journal.html" class="inline-flex items-center text-lime font-mono text-sm mb-8 hover:underline" data-nav-link>
+          <svg class="mr-2 rotate-180" width="14" height="14"><use href="../assets/icons/icons.svg#icon-chevron-right"></use></svg>
+          BACK TO JOURNAL
+        </a>
+        <h1 class="font-black text-4xl md:text-5xl lg:text-6xl uppercase text-cream leading-tight mb-6">
+          Why I Design Systems to Fail Gracefully
+        </h1>
+        <p class="text-xl text-cream/70 font-mono">
+          Most software fails not because of bugs, but because it collapses when assumptions break.
+        </p>
+      </header>
+
+      <!-- Article Content -->
+      <div class="card p-8 md:p-12" data-animate>
+        <div class="card-content">
+          <div class="scanline"></div>
+          <div class="prose prose-invert font-mono text-cream/90 leading-relaxed space-y-8">
+
+            <p class="text-lg">
+              Most software doesn't fail dramatically.<br>
+              It fails quietly.
+            </p>
+
+            <div class="pl-6 border-l-4 border-lime/50 text-cream/70 space-y-1">
+              <p>A task is forgotten.</p>
+              <p>A state becomes inconsistent.</p>
+              <p>A user does something unexpected.</p>
+              <p>A system assumes the world behaves perfectly — and it doesn't.</p>
+            </div>
+
+            <p>That's where things break.</p>
+
+            <p class="text-lime font-black text-xl">
+              Failure is not the exception. It is the baseline.
+            </p>
+
+            <p>When I design software systems, I assume three things:</p>
+
+            <ul class="list-none space-y-2 pl-4">
+              <li><span class="text-lime font-black">&gt;</span> Users will misunderstand the interface</li>
+              <li><span class="text-lime font-black">&gt;</span> Someone will skip a step</li>
+              <li><span class="text-lime font-black">&gt;</span> Reality will violate at least one assumption</li>
+            </ul>
+
+            <p>If a system only works when everyone behaves correctly, it is already broken.</p>
+
+            <!-- Section: Graceful vs Catastrophic -->
+            <div class="border-4 border-lime bg-navy p-6 my-8">
+              <h2 class="text-lime font-black text-2xl uppercase mb-6">[Graceful failure vs catastrophic failure]</h2>
+
+              <p class="mb-4">There is a difference between a system that:</p>
+
+              <p class="text-cream font-black mb-2">degrades predictably</p>
+              <p class="mb-4">and one that</p>
+              <p class="text-cream font-black">collapses completely</p>
+            </div>
+
+            <p><span class="text-lime font-black">Graceful failure</span> means:</p>
+            <ul class="list-none space-y-2 pl-4">
+              <li><span class="text-lime">&gt;</span> partial functionality still works</li>
+              <li><span class="text-lime">&gt;</span> errors are contained</li>
+              <li><span class="text-lime">&gt;</span> damage does not propagate</li>
+              <li><span class="text-lime">&gt;</span> recovery is possible</li>
+            </ul>
+
+            <p><span class="text-cream font-black">Catastrophic failure</span> means:</p>
+            <ul class="list-none space-y-2 pl-4 text-cream/70">
+              <li><span class="text-cream/50">&gt;</span> one mistake corrupts everything</li>
+              <li><span class="text-cream/50">&gt;</span> a single edge case breaks the flow</li>
+              <li><span class="text-cream/50">&gt;</span> the system requires manual rescue</li>
+            </ul>
+
+            <p>Most systems fail catastrophically because failure was never designed for.</p>
+
+            <!-- Section: Uniform paths -->
+            <h2 class="text-lime font-black text-2xl uppercase mt-12 mb-6">[Uniform paths are dangerous]</h2>
+
+            <p>In many software systems, everything flows through the same assumptions:</p>
+
+            <ul class="list-none space-y-1 pl-4 text-cream/70">
+              <li>the same "happy path"</li>
+              <li>the same perfect user</li>
+              <li>the same ideal timing</li>
+            </ul>
+
+            <p>
+              That looks clean on a whiteboard.<br>
+              It is fragile in production.
+            </p>
+
+            <p>
+              Resilient systems isolate failure.<br>
+              They expect deviation.<br>
+              They localise damage.
+            </p>
+
+            <!-- Section: Speed hides fragility -->
+            <h2 class="text-lime font-black text-2xl uppercase mt-12 mb-6">[Speed hides fragility]</h2>
+
+            <p>Fast development often means:</p>
+
+            <ul class="list-none space-y-1 pl-4 text-cream/70">
+              <li>no clear ownership</li>
+              <li>no lifecycle thinking</li>
+              <li>no recovery plan</li>
+              <li>no audit trail</li>
+            </ul>
+
+            <p>
+              The system looks complete.<br>
+              Until something goes wrong.
+            </p>
+
+            <p>Then everyone realises:</p>
+
+            <ul class="list-none space-y-1 pl-4 text-cream/70">
+              <li>nobody knows what state it's in</li>
+              <li>nobody knows who owns what</li>
+              <li>nobody knows how to fix it safely</li>
+            </ul>
+
+            <p>
+              Graceful systems don't panic under pressure.<br>
+              They absorb it.
+            </p>
+
+            <!-- The Rule -->
+            <div class="border-8 border-lime bg-navy p-8 my-12 text-center">
+              <h2 class="text-lime font-black text-xl uppercase mb-4">[My rule]</h2>
+              <p class="text-2xl md:text-3xl font-black text-cream leading-tight">
+                If humans must remember the task,<br>
+                the system has already failed.
+              </p>
+              <p class="text-cream/70 mt-6">
+                That principle guides every system I design.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-12 text-center" data-animate>
+        <div class="border-8 border-black bg-lime p-8 shadow-brutal-2xl hover-straighten" style="transform: rotate(-1deg);">
+          <p class="font-black text-lg uppercase text-navy mb-6 font-mono">
+            If this resonates, let's talk about your system.
+          </p>
+          <a href="../contact.html" class="btn bg-navy text-lime border-4 border-black" style="box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);" data-nav-link>
+            WORK WITH ME
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-block">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">S</div>
+            <span class="footer-logo-text">SIGHENCEA</span>
+          </div>
+          <p class="footer-bio">
+            <span class="text-lime font-black">&gt;&gt;</span> I design and build software systems that endure.
+            Based in Midleton, Ireland.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="GitHub">
+              <svg width="20" height="20"><use href="../assets/icons/icons.svg#icon-github"></use></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg width="20" height="20"><use href="../assets/icons/icons.svg#icon-linkedin"></use></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <h4 class="footer-heading">[NAVIGATION]</h4>
+          <ul class="footer-links">
+            <li><a href="../work.html" data-nav-link>&gt; WORK</a></li>
+            <li><a href="../journal.html" data-nav-link>&gt; JOURNAL</a></li>
+            <li><a href="../contact.html" data-nav-link>&gt; CONTACT</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-block">
+          <h4 class="footer-heading">[LEGAL]</h4>
+          <ul class="footer-links">
+            <li><a href="../terms.html" data-nav-link>&gt; TERMS</a></li>
+            <li><a href="../privacy.html" data-nav-link>&gt; PRIVACY</a></li>
+            <li><a href="../cookies.html" data-nav-link>&gt; COOKIES</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-credits">
+          [COPYRIGHT <span class="current-year">2025</span> SIGHENCEA] /// [DESIGNED_WITH_PRECISION BY R.S.]
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
