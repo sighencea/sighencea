@@ -75,22 +75,21 @@
           <h1 class="font-black text-4xl md:text-6xl mb-8 uppercase text-lime inline-block bg-black px-6 py-4 border-8 border-lime shadow-lime-lg" style="transform: rotate(-2deg);">
             JOURNAL
           </h1>
-          <p class="text-xl text-cream font-mono mt-4">
-            <span class="text-lime font-black">&gt;&gt;</span> Notes on systems, software, and building things that endure
-          </p>
         </div>
 
-        <!-- Intro Block -->
-        <div class="card p-8 md:p-12 border-4 border-lime/30" data-animate>
-          <div class="card-content">
-            <div class="scanline"></div>
-            <div class="text-cream/90 leading-relaxed font-mono space-y-4">
-              <p class="text-lg">
-                <span class="text-lime font-black">&gt;&gt;</span> These are notes from real work.
+        <!-- Featured Article -->
+        <div data-animate>
+          <div class="card journal-featured p-8 md:p-12 border-8 border-lime shadow-lime-xl">
+            <div class="card-content">
+              <div class="scanline"></div>
+              <span class="text-lime text-xs font-black tracking-widest uppercase mb-4 block bg-black inline-block px-3 py-1 border-2 border-lime">[FEATURED_ENTRY]</span>
+              <h2 class="font-black text-3xl md:text-5xl mb-6 uppercase text-cream leading-tight">
+                Why I Design Systems to Fail Gracefully
+              </h2>
+              <p class="text-cream/80 text-lg mb-8 leading-relaxed font-mono">
+                Most software fails not because of bugs, but because it collapses when assumptions break. Failure-aware design means building systems that degrade gracefully, communicate clearly, and recover without human intervention.
               </p>
-              <p class="text-cream/70">
-                They are not tutorials and not opinions for attention. They are observations from building systems that have to survive real usage, real users, and real consequences.
-              </p>
+              <span class="text-lime font-black text-sm font-mono">[COMING_SOON]</span>
             </div>
           </div>
         </div>
@@ -99,20 +98,6 @@
         <div class="flex flex-col gap-8">
           <!-- Article 1 -->
           <article class="card card-tilt-left p-6 border-l-8 border-lime" data-animate>
-            <div class="card-content">
-              <div class="scanline"></div>
-              <h3 class="font-black text-2xl md:text-3xl mb-4 uppercase text-cream leading-tight">
-                Why I Design Systems to Fail Gracefully
-              </h3>
-              <p class="text-cream/70 leading-relaxed mb-6 font-mono">
-                Most software fails not because of bugs, but because it collapses when assumptions break.
-              </p>
-              <span class="text-lime font-black text-sm font-mono">[COMING_SOON]</span>
-            </div>
-          </article>
-
-          <!-- Article 2 -->
-          <article class="card card-tilt-right p-6 border-l-8 border-lime" data-animate>
             <div class="card-content">
               <div class="scanline"></div>
               <h3 class="font-black text-2xl md:text-3xl mb-4 uppercase text-cream leading-tight">
@@ -125,8 +110,8 @@
             </div>
           </article>
 
-          <!-- Article 3 -->
-          <article class="card card-tilt-left p-6 border-l-8 border-lime" data-animate>
+          <!-- Article 2 -->
+          <article class="card card-tilt-right p-6 border-l-8 border-lime" data-animate>
             <div class="card-content">
               <div class="scanline"></div>
               <h3 class="font-black text-2xl md:text-3xl mb-4 uppercase text-cream leading-tight">
