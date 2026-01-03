@@ -6,7 +6,8 @@
       "WebFetch(domain:www.getabrax.com)",
       "WebFetch(domain:www.sinest.app)",
       "Bash(find:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []
