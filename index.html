@@ -5,32 +5,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sighencea</title>
     <style>
+        * { box-sizing: border-box; }
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
+            overflow: hidden;
         }
         body {
-            background-color: #1a1a1a;
+            background: radial-gradient(ellipse at center, #050912 0%, #000 80%);
             color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .grid {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(to right, rgba(120, 170, 220, 0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(120, 170, 220, 0.06) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 95%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 95%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        canvas#plexus {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.25;
+        }
+        .vignette {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.6) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .content {
+            position: relative;
+            z-index: 3;
+            height: 100%;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             text-align: center;
             padding: 1rem;
-            box-sizing: border-box;
         }
         h1 {
-            font-weight: 300;
-            font-size: clamp(1.5rem, 5vw, 3rem);
+            font-weight: 800;
+            font-size: clamp(1.75rem, 5.5vw, 3.25rem);
             margin: 0;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-shadow:
+                0 0 20px rgba(0, 0, 0, 0.9),
+                0 0 50px rgba(0, 0, 0, 0.7);
+        }
+        p.subheading {
+            font-weight: 300;
+            font-size: clamp(0.9rem, 2vw, 1.15rem);
+            margin: 1.25rem 0 0;
+            letter-spacing: 0.12em;
+            color: rgba(220, 230, 245, 0.75);
+            text-shadow:
+                0 0 15px rgba(0, 0, 0, 0.9),
+                0 0 35px rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
 <body>
-    <h1>Something great is about to happen</h1>
+    <div class="grid"></div>
+    <canvas id="plexus"></canvas>
+    <div class="vignette"></div>
+    <div class="content">
+        <h1>Order is being established</h1>
+        <p class="subheading">The All is Mind. Nothing rests. Everything moves.</p>
+    </div>
+    <script>
+    (() => {
+        const canvas = document.getElementById('plexus');
+        const ctx = canvas.getContext('2d');
+        const DPR = Math.min(window.devicePixelRatio || 1, 2);
+        let W = 0, H = 0;
+        let particles = [];
+
+        function resize() {
+            W = canvas.width = Math.floor(window.innerWidth * DPR);
+            H = canvas.height = Math.floor(window.innerHeight * DPR);
+            canvas.style.width = window.innerWidth + 'px';
+            canvas.style.height = window.innerHeight + 'px';
+            seed();
+        }
+
+        function seed() {
+            const area = (W * H) / (DPR * DPR);
+            const target = Math.max(60, Math.min(140, Math.round(area / 14000)));
+            particles = [];
+            for (let i = 0; i < target; i++) {
+                particles.push({
+                    x: Math.random() * W,
+                    y: Math.random() * H,
+                    vx: (Math.random() - 0.5) * 0.25 * DPR,
+                    vy: (Math.random() - 0.5) * 0.25 * DPR,
+                    r: (1 + Math.random() * 1.4) * DPR,
+                    phase: Math.random() * Math.PI * 2,
+                    speed: 0.6 + Math.random() * 0.8,
+                });
+            }
+        }
+
+        const MAX_DIST = 160 * DPR;
+        const MAX_DIST_SQ = MAX_DIST * MAX_DIST;
+
+        function frame(t) {
+            ctx.clearRect(0, 0, W, H);
+
+            for (const p of particles) {
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < -20) p.x = W + 20;
+                if (p.x > W + 20) p.x = -20;
+                if (p.y < -20) p.y = H + 20;
+                if (p.y > H + 20) p.y = -20;
+            }
+
+            ctx.lineWidth = 1 * DPR;
+            for (let i = 0; i < particles.length; i++) {
+                const a = particles[i];
+                for (let j = i + 1; j < particles.length; j++) {
+                    const b = particles[j];
+                    const dx = a.x - b.x;
+                    const dy = a.y - b.y;
+                    const d2 = dx * dx + dy * dy;
+                    if (d2 < MAX_DIST_SQ) {
+                        const alpha = (1 - Math.sqrt(d2) / MAX_DIST) * 0.35;
+                        ctx.strokeStyle = `rgba(150, 195, 235, ${alpha})`;
+                        ctx.beginPath();
+                        ctx.moveTo(a.x, a.y);
+                        ctx.lineTo(b.x, b.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            for (const p of particles) {
+                const pulse = 0.55 + 0.45 * Math.sin(t * 0.001 * p.speed + p.phase);
+                const haloR = p.r * 5;
+                const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, haloR);
+                grad.addColorStop(0, `rgba(220, 235, 255, ${0.7 * pulse})`);
+                grad.addColorStop(0.4, `rgba(140, 185, 230, ${0.25 * pulse})`);
+                grad.addColorStop(1, 'rgba(120, 170, 220, 0)');
+                ctx.fillStyle = grad;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, haloR, 0, Math.PI * 2);
+                ctx.fill();
+
+                ctx.fillStyle = `rgba(230, 240, 255, ${0.85 * (0.6 + 0.4 * pulse)})`;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            requestAnimationFrame(frame);
+        }
+
+        resize();
+        window.addEventListener('resize', resize);
+        requestAnimationFrame(frame);
+    })();
+    </script>
 </body>
 </html>

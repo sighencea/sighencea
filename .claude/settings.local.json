@@ -9,7 +9,8 @@
       "Bash(ls:*)",
       "Bash(grep:*)",
       "Bash(rm /home/t490/Documents/GitHub/sighencea/about.html /home/t490/Documents/GitHub/sighencea/contact.html /home/t490/Documents/GitHub/sighencea/cookies.html /home/t490/Documents/GitHub/sighencea/privacy.html /home/t490/Documents/GitHub/sighencea/terms.html /home/t490/Documents/GitHub/sighencea/journal.html /home/t490/Documents/GitHub/sighencea/work.html)",
-      "Bash(rm -rf /home/t490/Documents/GitHub/sighencea/assets /home/t490/Documents/GitHub/sighencea/_examples /home/t490/Documents/GitHub/sighencea/journal)"
+      "Bash(rm -rf /home/t490/Documents/GitHub/sighencea/assets /home/t490/Documents/GitHub/sighencea/_examples /home/t490/Documents/GitHub/sighencea/journal)",
+      "WebFetch(domain:www.istockphoto.com)"
     ],
     "deny": [],
     "ask": []
